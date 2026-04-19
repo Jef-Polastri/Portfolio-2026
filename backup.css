@@ -1,4 +1,50 @@
-* {
+<section id="project" class="project">
+            <h2 class="project-title">Projects</h2>
+            <div class="project-list">
+                <div class="project-item">
+                    <h3>Project 1: Data Analysis and Dashboard Creation</h3>
+                    <p>In this project, I was responsible for analyzing large datasets to identify trends and insights. I then created interactive dashboards using Power BI to visualize the data and provide actionable insights to stakeholders.</p>
+                    <h2>Skills Used:</h2>
+                    <ul>
+                        <li>Data Analysis</li>
+                        <li>Power BI</li>
+                        <li>SQL</li>
+                        <li>Data Visualization</li>
+                    </ul>                
+                </div>
+                <br></br>
+                <div class="project-item">
+                    <h3>Project 2: ERP Implementation</h3>
+                    <p>Led the implementation of the Protheus ERP system, which involved requirements gathering, system configuration, and user training. This project resulted in improved operational efficiency and streamlined business processes.</p>
+                </div>
+                <br></br>
+                <div class="project-item">
+                    <h3>Project 1: Data Analysis and Dashboard Creation</h3>
+                    <p>In this project, I was responsible for analyzing large datasets to identify trends and insights. I then created interactive dashboards using Power BI to visualize the data and provide actionable insights to stakeholders.</p>
+                    <h2>Skills Used:</h2>
+                    <ul>
+                        <li>Data Analysis</li>
+                        <li>Power BI</li>
+                        <li>SQL</li>
+                        <li>Data Visualization</li>
+                    </ul>                
+                </div>
+                <br></br>
+                <div class="project-item">
+                    <h3>Project 1: Data Analysis and Dashboard Creation</h3>
+                    <p>In this project, I was responsible for analyzing large datasets to identify trends and insights. I then created interactive dashboards using Power BI to visualize the data and provide actionable insights to stakeholders.</p>
+                    <h2>Skills Used:</h2>
+                    <ul>
+                        <li>Data Analysis</li>
+                        <li>Power BI</li>
+                        <li>SQL</li>
+                        <li>Data Visualization</li>
+                    </ul>                
+                </div>
+            </div>
+        </section>
+
+        * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -63,7 +109,7 @@ body {
     padding: 0.5rem;
     position: relative;
     text-decoration: none;
-    color: var(--accent-color);
+    color: var(--text-color);
     font-size: 2rex;
     transition: color 0.3s ease;
 }.link-menu:hover{
@@ -139,7 +185,7 @@ body {
 .about p {
     font-size: 0.9rem;
     line-height: 1.5;
-    color: var(--accent-color);
+    color: var(--text-color);
     text-align: center;
     text-align: justify;
 
@@ -187,7 +233,7 @@ body {
 }
 .knowledge-title-wrapper h2 {
     font-size: 2rem;
-    color: var(--accent-color);
+    color: var(--text-color);
     text-align: center;
     font-family: Poppins, bold;
   
@@ -204,7 +250,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--secondary-color);
-    color: #1a1a1a;
+    color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 12px;
@@ -230,7 +276,7 @@ body {
 .contact h2 {    
     font-size: 2rem;
     margin-bottom: 0.2rem;
-    color: var(--accent-color);
+    color: var(--text-color);
     text-align: center;
     font-family: Poppins, bold;
 }
@@ -258,7 +304,7 @@ body {
     align-items: center;   
     width: 20rem;
     height: 3rem;
-    color: var(--accent-color);
+    color: var(--text-color);
 }
 .form-submit {
     display: flex;
@@ -273,7 +319,7 @@ body {
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease;
-    color: var(--accent-color);
+    color: var(--text-color);
     width: 20rem;
 }
 .btn-submit:hover {
@@ -292,7 +338,7 @@ body {
 .experience h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: var(--accent-color);
+    color: var(--text-color);
     text-align: center;
 }
 .experience h3 {
@@ -309,7 +355,7 @@ body {
 .experience p {
     font-size: 0.9rem;
     line-height: 1.5;
-    color: var(--accent-color);
+    color: var(--text-color);
     text-align: justify;
 }
 .skills span {
@@ -331,7 +377,7 @@ body {
     margin-top: 1rem;
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: var(--accent-color);
+    color: var(--text-color);
     text-align: center;
 }
 /* Container Geral da Seção */
@@ -443,7 +489,7 @@ body {
 .footer {
     padding: 1rem;
     text-align: center;
-    color: var(--accent-color);
+    color: var(--text-color);
     background-color: transparent;
     border-top: 1px solid var(--secondary-color);
     margin-top: 2rem;
