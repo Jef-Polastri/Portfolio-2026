@@ -41,8 +41,12 @@ const savedTheme = localStorage.getItem('portfolio-theme');
 const updateToggleIcon = (theme) => {
     if (!themeToggle) return;
     const icon = themeToggle.querySelector('.dark-mode-icon');
+    const label = themeToggle.querySelector('.dark-mode-label');
     if (icon) {
         icon.textContent = theme === 'dark' ? '☾' : '☀︎';
+    }
+    if (label) {
+        label.textContent = theme === 'dark' ? 'Dark Mode' : 'Light Mode';
     }
 };
 
