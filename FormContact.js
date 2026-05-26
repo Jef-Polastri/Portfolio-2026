@@ -56,6 +56,11 @@ const applyTheme = (theme) => {
     } else {
         body.classList.remove('dark-theme');
     }
+    // swap logo image based on theme
+    const logoImg = document.querySelector('.site-logo');
+    if (logoImg) {
+        logoImg.src = theme === 'dark' ? 'img/logo_yellow.png' : 'img/logo_white.png';
+    }
     localStorage.setItem('portfolio-theme', theme);
     updateToggleIcon(theme);
 };
@@ -72,3 +77,47 @@ if (themeToggle) {
         applyTheme(nextTheme);
     });
 }
+// Typing effect for header titles (type, pause, delete, loop)
+document.addEventListener('DOMContentLoaded', () => {
+    const targets = document.querySelectorAll('.type-target');
+    const sleep = (ms) => new Promise(res => setTimeout(res, ms));
+
+    const typeText = async (el, text, speed) => {
+        el.innerHTML = '';
+        const textNode = document.createTextNode('');
+        const cursor = document.createElement('span');
+        cursor.className = 'cursor';
+        el.appendChild(textNode);
+        el.appendChild(cursor);
+
+        for (let i = 0; i < text.length; i++) {
+            textNode.data += text[i];
+            await sleep(speed);
+        }
+    };
+
+    const deleteText = async (el, speed) => {
+        const textNode = el.childNodes[0];
+        if (!textNode) return;
+        while (textNode.data.length > 0) {
+            textNode.data = textNode.data.slice(0, -1);
+            await sleep(speed);
+        }
+    };
+
+    (async function loopAll() {
+        const typeSpeed = 70;
+        const deleteSpeed = 35;
+        const pauseAfter = 2200; // ms to wait with full text shown
+
+        while (true) {
+            for (const el of targets) {
+                const text = el.dataset.text || '';
+                await typeText(el, text, typeSpeed);
+                await sleep(pauseAfter);
+                await deleteText(el, deleteSpeed);
+                await sleep(250);
+            }
+        }
+    })();
+});

@@ -57,12 +57,23 @@ body{
 }
 .logo {
     position: fixed;
-    top: 1.4rem;
+    top: 0.6rem;
     left: 3rem;
     z-index: 101;
-    font-size: 1.5rem;
-    font-family: fonte-home-content-h1;
-    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.logo .site-logo {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    display: block;
+    transition: width 160ms ease, height 160ms ease;
+}
+.logo .site-logo.small {
+    width: 48px;
+    height: 48px;
 }
 /*bar navigation*/ 
 .bar-menu {
@@ -174,20 +185,25 @@ body{
     pointer-events: none;
     opacity: 0.98;
 }
+.dark-theme .image-home {
+    position: relative;
+}
+.dark-theme .image-home img {
+    filter: drop-shadow(-70px -50px 100px rgba(0, 200, 255, 0.4)) 
+            drop-shadow(-35px -25px 70px rgba(30, 170, 226, 0.3));
+    position: relative;
+}
 .dark-theme .image-home::after {
-    /* A couple of extra small stars near the top frame */
+    /* Glow light from notebook screen */
     content: "";
     position: absolute;
-    top: 10.6%;
-    left: 13.2%;
-    width: 84px;
-    height: 84px;
-    background-image:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.98) 0.9px, rgba(255,255,255,0) 2px),
-        radial-gradient(circle at 60% 35%, rgba(255,255,255,0.95) 0.8px, rgba(255,255,255,0) 1.8px);
-    background-repeat: no-repeat;
+    top: 10%;
+    left: 8%;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(ellipse 120px 100px at 50% 50%, rgba(0, 200, 255, 0.35), rgba(0, 200, 255, 0.1) 60%, transparent);
     pointer-events: none;
-    opacity: 0.98;
+    opacity: 0.8;
 }
 .home-content{
     text-align: center;
@@ -682,6 +698,7 @@ body{
 
 }
 .form-contact {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -691,6 +708,27 @@ body{
     max-width: 420px;
     margin: 0 auto;
     padding: 0 1rem;
+}
+.type-target {
+    color: var(--text-color);
+    min-height: calc(1.2em + 0.2rem);
+    display: inline-block;
+}
+.type-target .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background: currentColor;
+    margin-left: 6px;
+    vertical-align: bottom;
+    animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+    50% { opacity: 0 }
+}
+.form-contact > * {
+    position: relative;
+    z-index: 1;
 }
 .form-name,
 .form-message {
@@ -724,6 +762,10 @@ body{
     padding: 0.9rem 1.5rem;
     background-color: var(--color-button);
     border-radius: 24px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    -webkit-appearance: none;
     cursor: pointer;
     font-family: fonte-menu;
     font-size: 1rem;
@@ -731,6 +773,10 @@ body{
     width: 100%;
     max-width: 100%;
     min-height: 3.8rem;
+}
+.btn-submit:focus {
+    outline: none;
+    box-shadow: none;
 }
 .btn-submit:hover {
     text-decoration: underline;
@@ -856,7 +902,7 @@ body{
     }
     .logo {
         left: 1rem;
-        top: 1rem;
+        top: 0.5rem;
         font-size: 1.2rem;
     }
     .home {
